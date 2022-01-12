@@ -3,7 +3,7 @@ import { Header } from './'
 
 
 
-const Layout = ({ children } : { children:any }) => {
+const Layout = ({ children }) => {
     return (
         <>
            <Header />

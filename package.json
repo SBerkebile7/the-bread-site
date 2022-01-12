@@ -1,9 +1,11 @@
 {
+  "name": "test-breadsite",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "graphql": "^16.2.0",
