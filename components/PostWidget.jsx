@@ -10,10 +10,10 @@ const PostWidget = ({ categories, slug }) => {
     useEffect(() => {
         if(slug) {
             getSimilarPosts(categories, slug)
-              .then((result) => setRelatedPosts(result))
+                .then((result) => setRelatedPosts(result))
         } else {
             getRecentPosts()
-              .then((result) => setRelatedPosts(result))
+                .then((result) => setRelatedPosts(result))
         }
     }, [slug])
 
