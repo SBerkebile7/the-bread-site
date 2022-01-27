@@ -12,7 +12,7 @@ export default async function comments(req, res) {
 
   const query = gql`
     mutation createComment($name: String!, $email: String!, $comment: String!, $slug: String!) {
-      createComment(data: { name: $name, email: $email, comment: $comment, post: { connect: { slug: $slug } } }) { id }
+      createComment(data: {name: $name, email: $email, comment: $comment, post: {connect: {slug: $slug}}}) { id }
     }
   `;
 
@@ -22,5 +22,6 @@ export default async function comments(req, res) {
     return res.status(200).send(result);
   } catch (error) {
     console.log(error);
+    return res.status(500).send(error);
   }
 }
