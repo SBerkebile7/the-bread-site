@@ -81,14 +81,14 @@ export const getRecentPosts = async () => {
             posts(
                 orderBy: createdAt_ASC
                 last: 3
-                ) {
-                    title
-                    featuredImage {
-                        url
-                    }
-                    createdAt
-                    slug
+            ) {
+                title
+                featuredImage {
+                    url
                 }
+                createdAt
+                slug
+            }
         }
     `
     
@@ -185,4 +185,16 @@ export const getFeaturedPosts = async() => {
     const result = await request(graphqlAPI, query);
 
     return result.posts;
+}
+
+export const getCategoryPost = async (slug) => {
+    const query = gql`
+        query GetCategoryPost($slug: String!) {
+            postsConnection(where: {categories_some: {slug: $slug}}) {
+                edges {
+                    cursor
+                }
+            }
+        }
+    `;
 }
