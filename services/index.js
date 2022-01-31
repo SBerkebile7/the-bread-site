@@ -223,3 +223,9 @@ export const getCategoryPost = async (slug) => {
 
     return result.postsConnection.edges;
 }
+
+export const getAdjacentPosts = async (createdAt, slug) => {
+    const query = gql`
+    
+    `;
+}
