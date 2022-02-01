@@ -7,8 +7,8 @@ const Categories = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-      getCategories()
-          .then((newCategories) => setCategories(newCategories));
+    getCategories()
+      .then((newCategories) => setCategories(newCategories));
   }, []);
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 mb-8 pb-12">
