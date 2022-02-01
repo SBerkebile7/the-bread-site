@@ -9,7 +9,7 @@ const PostDetails = ({ post }) => {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <Loader />
+    return <Loader />;
   }
 
   return (
