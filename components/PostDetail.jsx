@@ -6,15 +6,15 @@ const PostDetail = ({ post }) => {
     let modifiedText = text;
 
     if (obj) {
-        if (obj.bold) {
-            modifiedText = (<b key={index}>{text}</b>);
-        }
-        if (obj.italic) {
-            modifiedText = (<em key={index}>{text}</em>);
-        }
-        if (obj.underline) {
-            modifiedText = (<u key={index}>{text}</u>);
-        }
+      if (obj.bold) {
+        modifiedText = (<b key={index}>{text}</b>);
+      }
+      if (obj.italic) {
+        modifiedText = (<em key={index}>{text}</em>);
+      }
+      if (obj.underline) {
+        modifiedText = (<u key={index}>{text}</u>);
+      }
     }
 
     switch (type) {
@@ -72,7 +72,7 @@ const PostDetail = ({ post }) => {
         {post.content.raw.children.map((typeObj, index) => {
           const children = typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item));
       
-          return getContentFragment(index, children, typeObj, typeObj.type)
+          return getContentFragment(index, children, typeObj, typeObj.type);
         })}
       </div>
     </div>
